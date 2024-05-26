@@ -4,18 +4,18 @@
     ViewData["Title"] = "Usuarios";
 }
 
-<h2>Lista de Usuarios</h2>
+<h2 style=" text-align: center; font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Lista de Usuarios</h2>
 
-<div class="table-responsive">
+<div class="table-responsive" style="background-color: #aad5e9;">
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Avatar</th>
-                <th>Perfil</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Id</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Email</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">First Name</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Last Name</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Avatar</th>
+                <th style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Perfil</th>
             </tr>
         </thead>
         <tbody>
@@ -24,12 +24,12 @@
                 foreach (var user in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => user.Id)</td>
-                        <td>@Html.DisplayFor(modelItem => user.Email)</td>
-                        <td>@Html.DisplayFor(modelItem => user.Nombre)</td>
-                        <td>@Html.DisplayFor(modelItem => user.Apellido)</td>
-                        <td><img src="@Html.Encode(user.Avatar)" alt="Avatar of @Html.Encode(user.Nombre) @Html.Encode(user.Apellido)" class="avatar-img" /></td>
-                        <td><a class="btn btn-primary" href="@Url.Action("Perfil", new { Id = user.Id })">Ir a Perfil</a></td>
+                        <td style="font-weight: bold; font-family: Arial, sans-serif; color:#750D37;">@Html.DisplayFor(modelItem => user.Id)</td>
+                        <td style="font-weight: bold; font-family: Arial, sans-serif; color:#750D37;">@Html.DisplayFor(modelItem => user.Email)</td>
+                        <td style="font-weight: bold; font-family: Arial, sans-serif; color:#750D37;">@Html.DisplayFor(modelItem => user.Nombre)</td>
+                        <td style="font-weight: bold; font-family: Arial, sans-serif; color:#750D37;">@Html.DisplayFor(modelItem => user.Apellido)</td>
+                        <td style=" text-align: center;"><img src="@Html.Encode(user.Avatar)" alt="Avatar of @Html.Encode(user.Nombre) @Html.Encode(user.Apellido)" class="avatar-img" /></td>
+                        <td style=" text-align: center;" ><a class="btn btn-primary" href="@Url.Action("Perfil", new { Id = user.Id })">Ir a Perfil</a></td>
                     </tr>
                 }
             }
@@ -45,8 +45,8 @@
 
 <style>
     .avatar-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        border-radius: 30%;
     }
 </style>

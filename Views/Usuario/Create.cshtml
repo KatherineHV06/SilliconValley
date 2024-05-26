@@ -4,16 +4,16 @@
     ViewData["Title"] = "Crear Usuario";
 }
 
-<div class="container">
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background-color: #3ca8da;">
                 <h5 class="card-header bg-primary text-white">Crear Nuevo Usuario</h5>
                 <div class="card-body">
                     @if (TempData["SuccessMessage"] != null)
                     {
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>@TempData["SuccessMessage"]</strong> ¡Usuario creado exitosamente!
+                            <strong>@TempData["SuccessMessage"]</strong> 
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -22,12 +22,12 @@
 
                     <form asp-action="Create" method="post">
                         <div class="form-group">
-                            <label for="name">Nombre:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <label for="name" style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">Nombre:</label>
+                            <input type="text" class="form-control" id="name" name="name" required style="background-color: #aad5e9;">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="font-weight: bold; font-family: Arial, sans-serif; color:#140d75;">
                             <label for="job">Trabajo:</label>
-                            <input type="text" class="form-control" id="job" name="job" required>
+                            <input type="text" class="form-control" id="job" name="job" required style="background-color: #aad5e9;">
                         </div><br>
                         <button type="submit" class="btn btn-primary">Crear Usuario</button>
                     </form>
