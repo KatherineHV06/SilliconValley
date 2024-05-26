@@ -1,0 +1,52 @@
+@model List<SilliconValley.Integration.dto.Usuario>
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h2>Lista de Usuarios</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Avatar</th>
+                <th>Perfil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => user.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => user.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => user.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => user.Apellido)</td>
+                        <td><img src="@Html.Encode(user.Avatar)" alt="Avatar of @Html.Encode(user.Nombre) @Html.Encode(user.Apellido)" class="avatar-img" /></td>
+                        <td><a class="btn btn-primary" href="@Url.Action("Perfil", new { Id = user.Id })">Ir a Perfil</a></td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center font-weight-bold">No users found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .avatar-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+</style>

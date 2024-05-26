@@ -1,0 +1,35 @@
+@model SilliconValley.Integration.dto.Usuario
+
+@{
+    ViewData["Title"] = "Perfil de Usuario";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-3">Perfil de @Model.Nombre @Model.Apellido</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.Avatar" alt="Avatar" class="img-fluid rounded-circle mb-3" style="max-width: 200px;" />
+        </div>
+        <div class="col-md-8">
+            <h2>Información del Usuario</h2>
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Nombre</dt>
+                <dd class="col-sm-9">@Model.Nombre</dd>
+
+                <dt class="col-sm-3">Apellido</dt>
+                <dd class="col-sm-9">@Model.Apellido</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="@Url.Action("Index", "Usuario")" class="btn btn-secondary">Volver a la lista de usuarios</a>
+    </div>
+</div>
