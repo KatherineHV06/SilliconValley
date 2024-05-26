@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SilliconValley.Data;
+using SilliconValley.Integration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ListarUnUsuarioAPIIntegration, ListarUnUsuarioAPIIntegration>();
+builder.Services.AddScoped<ListarUsuarioAPIIntegration, ListarUsuarioAPIIntegration>();
+builder.Services.AddScoped<CrearUsuarioAPIIntegration, CrearUsuarioAPIIntegration>();
+
 
 var app = builder.Build();
 
